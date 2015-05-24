@@ -1,9 +1,8 @@
-## Put comments here that give an overall description of what your
-## functions do
+## Define two functions that allow us to compute the inverse of a matrix and cache
+## it such that computing it again is not necessary
 
 ## Return a "matrix" that allows you to cash its inverse, 
-## where M is an inversible matrix
-
+## input parameter M should be an inversible matrix
 makeCacheMatrix <- function(M = matrix()) {
   # initialize W, which will be the inverse of M
   W = NULL
@@ -23,10 +22,9 @@ makeCacheMatrix <- function(M = matrix()) {
 }
 
 
-## Write a short comment describing this function
-
+## Return a matrix that is the inverse of cacheMatrix
+## Only computes it the first time, then uses the cached inverse thereafter
 cacheSolve <- function(cacheMatrix, ...) {
-        ## Return a matrix that is the inverse of 'x'
   # if cacheMatrix's inverse is not NULL, message("getting cached data") and return the cached data
   inv <-cacheMatrix$get_inverse()
   if(!is.null(inv)) {
